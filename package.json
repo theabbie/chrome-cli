@@ -1,0 +1,31 @@
+{
+  "name": "chrome-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for Chrome DevTools with persistent browser sessions",
+  "type": "module",
+  "bin": {
+    "chrome-cli": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "daemon": "tsx src/daemon.ts",
+    "test": "vitest run",
+    "postinstall": "npm run build || true"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0",
+    "express": "^4.18.2",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/express": "^4.17.21",
+    "typescript": "^5.3.0",
+    "tsx": "^4.7.0",
+    "vitest": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
